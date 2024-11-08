@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1C1C1C"
+    tools:context=".MainActivity">
+
+    <!-- Album Art -->
+    <ImageView
+        android:id="@+id/album_art"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        android:contentDescription="Album Art" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="SOULSTUDIO"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Song Title -->
+    <TextView
+        android:id="@+id/song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/album_art"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="We don't Talk anymore"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- Song Artist -->
+    <TextView
+        android:id="@+id/song_pronunciation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_title"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:text="Charlie Puth"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <!-- Share Icon -->
+    <ImageView
+        android:id="@+id/share_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/song_title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/share"
+        android:contentDescription="Share Icon" />
+
+    <!-- Playback Controls (SeekBar and Time Labels) -->
+    <LinearLayout
+        android:id="@+id/playback_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_pronunciation"
+        android:layout_marginTop="16dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01:24"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/song_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:thumbTint="@android:color/white"
+            android:progressTint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03:58"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Play, Previous, Next, and Like Buttons -->
+    <LinearLayout
+        android:id="@+id/control_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/playback_controls"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp">
+
+        <ImageView
+            android:id="@+id/previous_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/prev"
+            android:contentDescription="Previous Button" />
+
+        <!-- Play Button initially set as play icon -->
+        <ImageView
+            android:id="@+id/play_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/play"
+        android:contentDescription="Play Button" />
+
+        <ImageView
+            android:id="@+id/next_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/next"
+            android:contentDescription="Next Button" />
+
+        <ImageView
+            android:id="@+id/like_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/fav"
+            android:contentDescription="Like Button" />
+    </LinearLayout>
+
+    <!-- Lyrics Section -->
+    <TextView
+        android:id="@+id/lyrics_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/control_buttons"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="Lyrics"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Lyrics Container -->
+    <ScrollView
+        android:id="@+id/lyrics_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lyrics_title"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <TextView
+            android:id="@+id/lyrics_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lyrics go here..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </ScrollView>
+
+</RelativeLayout>
